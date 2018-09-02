@@ -673,7 +673,7 @@ class ID3(TinyTag):
                 return self._unpad(codecs.decode(bytestr, 'UTF-16le'))
             elif first_byte == b'\x03':  # UTF-8
                 return codecs.decode(b[1:], 'UTF-8')
-			print (b)
+            print (b)
             return self._unpad(codecs.decode(b[1:], 'ISO-8859-1', 'ignore'))  # wild guess
         except UnicodeDecodeError:
             raise TinyTagException('Error decoding ID3 Tag!')
